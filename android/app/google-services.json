@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "972931861264",
+    "project_id": "sohaib-elancer-hackathon2",
+    "storage_bucket": "sohaib-elancer-hackathon2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972931861264:android:1d2ef478749a002391f395",
+        "android_client_info": {
+          "package_name": "com.example.final_sohaib_hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972931861264-p0a63afjq1kfgl6eikg2cfc0v66v3vr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxTXCbH3qUgyIPbPAHnYOUOG6hNgrlIDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972931861264-p0a63afjq1kfgl6eikg2cfc0v66v3vr3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

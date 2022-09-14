@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>972931861264-m3leem5lnuemp50lgf2k1o612u74h19n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.972931861264-m3leem5lnuemp50lgf2k1o612u74h19n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA0aIJMb26PVx9UBOwfE3xsjG9c9_lkJvE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>972931861264</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.finalSohaibHackathon</string>
+	<key>PROJECT_ID</key>
+	<string>sohaib-elancer-hackathon2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sohaib-elancer-hackathon2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:972931861264:ios:150bec3008d5d53e91f395</string>
+</dict>
+</plist>
