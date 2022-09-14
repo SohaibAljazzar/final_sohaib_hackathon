@@ -1,9 +1,10 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:final_sohaib_hackathon/firebase/fb_auth_controller.dart';
 import 'package:final_sohaib_hackathon/value/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../widgets/custom_text_filed.dart';
+
 import '../taps/freelancer_taps.dart';
 import '../taps/home_tap.dart';
 
@@ -46,19 +47,21 @@ class _HomeScreenState extends State<HomeScreen>
         ),
         title: const Text(
           'Home',
-          style: TextStyle(fontSize: 16,color: Colors.white),
+          style: TextStyle(fontSize: 16, color: Colors.white),
         ),
         leading: IconButton(
             onPressed: () {
-              FbAuthController().signOut();
-              Navigator.pushReplacementNamed(context, '/login_screen');
+              showDialogInfo();
             },
-            icon: const Icon(Icons.logout_outlined,color: Colors.white,)),
+            icon: const Icon(
+              Icons.logout_outlined,
+              color: Colors.white,
+            )),
       ),
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 8.h),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
             child: TabBar(
               // isScrollable: true,
               indicatorWeight: 2,
@@ -99,4 +102,33 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 
+  void showDialogInfo() {
+    AwesomeDialog(
+      context: context,
+      dialogType: DialogType.QUESTION,
+      borderSide: BorderSide(
+        color: Colors.red,
+        width: 2.r,
+      ),
+      width: 400.w,
+      buttonsBorderRadius: BorderRadius.all(
+        Radius.circular(2.r),
+      ),
+      dismissOnTouchOutside: true,
+      dismissOnBackKeyPress: false,
+      onDissmissCallback: (type) {},
+      headerAnimationLoop: false,
+      animType: AnimType.BOTTOMSLIDE,
+      title: 'هل تريد تسجيل الخروج؟',
+      desc: 'انت على وشك تسجيل الخروج !',
+      showCloseIcon: true,
+      btnCancelOnPress: () {},
+      btnOkOnPress: () async {
+        FbAuthController().signOut();
+        Navigator.pushReplacementNamed(context, '/login_screen');
+      },
+      btnCancelText: 'اغلاق',
+      btnOkText: 'حسنا',
+    ).show();
+  }
 }

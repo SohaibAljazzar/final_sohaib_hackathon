@@ -4,7 +4,9 @@ import 'package:final_sohaib_hackathon/prefs/shared_pref_controller.dart';
 import 'package:final_sohaib_hackathon/utils/context_extenssion.dart';
 import 'package:final_sohaib_hackathon/widgets/custom_text_filed.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svprogresshud/flutter_svprogresshud.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import '../../value/colors.dart';
 import '../../widgets/custom_button.dart';
 
@@ -140,6 +142,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _performLogin() async {
     if (_checkData()) {
+      SVProgressHUD.show();
+
       await _login();
     }
   }
@@ -155,10 +159,19 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _login() async {
     //TODO: Call login api request
-    FbResponse fbResponse = await FbAuthController().signIn(_emailTextController.text, _passwordTextController.text);
-    if(fbResponse.success){
+    FbResponse fbResponse = await FbAuthController()
+        .signIn(_emailTextController.text, _passwordTextController.text)
+        .catchError((onError) {
+      SVProgressHUD.dismiss();
+    });
+    if (fbResponse.success) {
+      SVProgressHUD.dismiss();
+
       Navigator.pushReplacementNamed(context, '/home_screen');
     }
-    context.showSnackBar(message: fbResponse.message, error: !fbResponse.success);
+    SVProgressHUD.dismiss();
+
+    context.showSnackBar(
+        message: fbResponse.message, error: !fbResponse.success);
   }
 }

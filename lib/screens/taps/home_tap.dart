@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import '../../value/colors.dart';
 import '../../widgets/custom_text_filed.dart';
 import '../../widgets/home_section.dart';
@@ -184,7 +185,8 @@ class MainScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(context, '/ads_details');
                         },
-                        style: ElevatedButton.styleFrom(primary: AppColors.appColor),
+                        style: ElevatedButton.styleFrom(
+                            primary: AppColors.appColor),
                         child: Text(
                           'تفاصيل الإعلان',
                           style: GoogleFonts.poppins(
@@ -225,59 +227,66 @@ class MainScreen extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(right: 8),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // padding: const EdgeInsets.only(top: 5,bottom: 5,right: 5),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // padding: const EdgeInsets.only(top: 5,bottom: 5,right: 5),
 
-                        CachedNetworkImage(
-                          height: 128.h,
-                          width: double.infinity,
-                          imageUrl: blogData[index]['image_url'],
-                          imageBuilder: (context, imageProvider) => Container(
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.r),
-                              image: DecorationImage(
-                                  image: imageProvider,
-                                  fit: BoxFit.cover,
-                                  scale: 10),
-                            ),
-                          ),
-                          placeholder: (context, url) => Center(
-                            child: SizedBox(
-                              height: 40.h,
-                              width: 40.w,
-                              child: const CircularProgressIndicator(
-                                strokeWidth: 2,
+                          CachedNetworkImage(
+                            height: 128.h,
+                            width: double.infinity,
+                            imageUrl: blogData[index]['image_url'],
+                            imageBuilder: (context, imageProvider) => Container(
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.r),
+                                image: DecorationImage(
+                                    image: imageProvider,
+                                    fit: BoxFit.cover,
+                                    scale: 10),
                               ),
                             ),
-                          ),
-                          errorWidget: (context, url, error) => Icon(
-                            Icons.error,
-                            size: 30.r,
-                            color: Colors.red.shade800,
-                          ),
-                        ),
-                        Padding(
-                          padding:  EdgeInsets.all( 8.r),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                blogData[index]['title'],
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w700, fontSize: 14.sp),
+                            placeholder: (context, url) => Center(
+                              child: SizedBox(
+                                height: 40.h,
+                                width: 40.w,
+                                child: const CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                ),
                               ),
-                              Text(
-                                blogData[index]['description'],
-                                style: GoogleFonts.poppins(
-                                    fontSize: 12.sp, fontWeight: FontWeight.w400),
-                              ),
-                            ],
+                            ),
+                            errorWidget: (context, url, error) => Icon(
+                              Icons.error,
+                              size: 30.r,
+                              color: Colors.red.shade800,
+                            ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: EdgeInsets.all(8.r),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  blogData[index]['title'],
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 14.sp),
+                                ),
+                                Text(
+                                  blogData[index]['description'],
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w400,
+                                      textBaseline: TextBaseline.alphabetic),
+                                  maxLines: 5,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

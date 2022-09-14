@@ -9,15 +9,15 @@ import 'package:final_sohaib_hackathon/screens/auth/login_screen.dart';
 import 'package:final_sohaib_hackathon/screens/auth/register_screen.dart';
 import 'package:final_sohaib_hackathon/screens/onboarding/onboarding_screen.dart';
 import 'package:final_sohaib_hackathon/screens/profile/edit_profile.dart';
-import 'package:final_sohaib_hackathon/value/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/core/launch_screen.dart';
+
 import 'firebase_options.dart';
+import 'screens/core/launch_screen.dart';
 
 // import 'screens/core/launch_screen.dart';
 
@@ -28,7 +28,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 }
 
 class MyApp extends StatelessWidget {
@@ -65,10 +66,10 @@ class MyApp extends StatelessWidget {
             '/login_screen': (context) => const LoginScreen(),
             '/register_screen': (context) => const RegisterScreen(),
             '/home_screen': (context) => const HomeScreen(),
-            '/ads_details': (context) =>  AdsDetiles(),
+            '/ads_details': (context) => AdsDetiles(),
             '/ads_details_admin': (context) => const AdsDetilesAdmin(),
             '/course_details_admin': (context) => const CoureseDetilesAdmin(),
-            '/course_details': (context) =>  CourseDetails(),
+            '/course_details': (context) => CourseDetails(),
             '/edit_profile_screen': (context) => const EditProfileScreen(),
           },
           localizationsDelegates: const [

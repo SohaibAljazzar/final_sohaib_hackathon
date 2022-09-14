@@ -48,6 +48,9 @@ dependencies:
   firebase_core: ^1.22.0
   firebase_auth: ^3.8.0
   cloud_firestore: ^3.4.7
+  awesome_dialog: ^2.2.1
+  flutter_svprogresshud: ^1.0.0
+
 
 dev_dependencies:
   flutter_test:

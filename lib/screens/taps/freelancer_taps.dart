@@ -45,72 +45,80 @@ class FreelancerScreen extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    CachedNetworkImage(
-                      height: 80.h,
-                      width: 50.w,
-                      imageUrl: freelancerProfile[index]['image_url'],
-                      imageBuilder: (context, imageProvider) => Container(
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.r),
-                          image: DecorationImage(
-                              image: imageProvider,
-                              fit: BoxFit.cover,
-                              scale: 10),
-                        ),
-                      ),
-                      placeholder: (context, url) => Center(
-                        child: SizedBox(
-                          height: 40.h,
-                          width: 40.w,
-                          child: const CircularProgressIndicator(
-                            strokeWidth: 2,
+                child: SingleChildScrollView(
+                  child: Row(
+                    children: [
+                      CachedNetworkImage(
+                        height: 80.h,
+                        width: 50.w,
+                        imageUrl: freelancerProfile[index]['image_url'],
+                        imageBuilder: (context, imageProvider) => Container(
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8.r),
+                            image: DecorationImage(
+                                image: imageProvider,
+                                fit: BoxFit.cover,
+                                scale: 10),
                           ),
                         ),
-                      ),
-                      errorWidget: (context, url, error) => Icon(
-                        Icons.error,
-                        size: 30.r,
-                        color: Colors.red.shade800,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20.w,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          freelancerProfile[index]['name'],
-                          style: GoogleFonts.cairo(
-                              fontWeight: FontWeight.w500, fontSize: 16.sp),
+                        placeholder: (context, url) => Center(
+                          child: SizedBox(
+                            height: 40.h,
+                            width: 40.w,
+                            child: const CircularProgressIndicator(
+                              strokeWidth: 2,
+                            ),
+                          ),
                         ),
-                        Text(
-                          freelancerProfile[index]['job_name'],
-                          style: GoogleFonts.cairo(
-                              fontWeight: FontWeight.w400, fontSize: 14.sp),
+                        errorWidget: (context, url, error) => Icon(
+                          Icons.error,
+                          size: 30.r,
+                          color: Colors.red.shade800,
                         ),
-                      ],
-                    ),
-                    const Spacer(),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/profile_screen');
-                      },
-                      style:
-                          ElevatedButton.styleFrom(primary: AppColors.appColor),
-                      child: Text(
-                        'الصفحة الشخصية',
-                        style: GoogleFonts.cairo(
-                            fontWeight: FontWeight.w500, fontSize: 14.sp),
                       ),
-                    ),
-                    SizedBox(
-                      width: 5.w,
-                    ),
-                  ],
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 100.w,
+                            child: Text(
+                              freelancerProfile[index]['name'],
+                              style: GoogleFonts.cairo(
+                                  fontWeight: FontWeight.w500, fontSize: 16.sp),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 100.w,
+                            child: Text(
+                              freelancerProfile[index]['job_name'],
+                              style: GoogleFonts.cairo(
+                                  fontWeight: FontWeight.w400, fontSize: 14.sp),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/profile_screen');
+                        },
+                        style: ElevatedButton.styleFrom(
+                            primary: AppColors.appColor),
+                        child: Text(
+                          'الصفحة الشخصية',
+                          style: GoogleFonts.cairo(
+                              fontWeight: FontWeight.w500, fontSize: 14.sp),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             );
