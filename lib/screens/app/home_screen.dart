@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen>
               bottomLeft: Radius.circular(20)),
         ),
         title: const Text(
-          'Home',
+          'الرئيسية',
           style: TextStyle(fontSize: 16, color: Colors.white),
         ),
         leading: IconButton(

@@ -8,10 +8,10 @@ import '../../value/colors.dart';
 class FreelancerScreen extends StatelessWidget {
   List<Map<String, dynamic>> freelancerProfile = [
     {
-      'name': 'نور إيهاب جابر',
+      'name': 'صهيب الجزار',
       'image_url':
-          'https://scontent.fjrs2-2.fna.fbcdn.net/v/t39.30808-6/289637467_162593789642257_2460236877729543757_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=0KpA3X4Ez-cAX9cnqGc&_nc_ht=scontent.fjrs2-2.fna&oh=00_AT-B9XzZjz8ALzfYJPoJRw0JkeU3Pe54Fazp6bz8AnKwsA&oe=6326E497',
-      'job_name': 'كاتبة محتوى',
+          'https://avatars.hsoubcdn.com/6c565e9e188f04fb0beb37ca8bd94f11?s=256',
+      'job_name': 'مبرمج تطبيقات',
     },
     {
       'name': 'آيات أحمد أحمد',
@@ -20,7 +20,7 @@ class FreelancerScreen extends StatelessWidget {
       'job_name': 'متخصصة SEO',
     },
     {
-      'name': 'أحمد سليمان العامودي',
+      'name': 'أحمد العامودي',
       'image_url':
           'https://lh3.googleusercontent.com/a-/AFdZucrcqfMsvnvLJp5M5yvGL9vEzBMLFDkfHrVihxSPSQ=s64-c',
       'job_name': 'مسوق الكتروني',
